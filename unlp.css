@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    font-size: 160%;
+    text-align: center;
+    font-family: "Open Sans";
+    background-color: #02545e;
+    color: #FFF;
+}
+
+.header img {
+    /*opacity: 0.8;*/
+    width: 20%;
+    position: absolute;
+    left: 0;
+    padding:0.5em;
+}
+
+.footer {
+    position: absolute;
+    top: 90%;
+    font-size: 50%;
+}
