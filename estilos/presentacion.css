@@ -1,0 +1,14 @@
+/* Estilos propios de la presentación */
+
+#principal {
+    font-size: 75%;
+    text-align: center;
+}
+
+#introduccion > ul {
+    border-bottom: 2px solid white;
+}
+
+#objetivos_especificos li {
+    line-height: 1.1em;
+}

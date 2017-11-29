@@ -1,0 +1,43 @@
+/* Estilos Facultad de informática (UNLP)  genéricos */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    font-size: 200%;
+    /**/
+    font-family: "Open Sans";
+    background-color: #02545e;
+    color: #FFF;
+}
+
+.header img:nth-child(1) {
+    /*opacity: 0.8;*/
+    width: 20%;
+    position: absolute;
+    left: 0;
+    padding:0.5em;
+}
+.header img:nth-child(2) {
+    /*opacity: 0.8;*/
+    width: 12%;
+    position: absolute;
+    right: 0;
+    padding:0.5em;
+}
+.footer {
+    position: absolute;
+    top: 90%;
+    font-size: 50%;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+li {
+    font-weight: normal;
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+    padding-left: 0.3em;
+    line-height: 1.5em;
+    list-style-type: circle;
+}
