@@ -3,9 +3,9 @@ Este repositorio contiene el código de la presentación utilizada para la defen
 
 Utiliza [Hovercraft!](https://github.com/regebro/hovercraft) (HTML5+CSS3).
 
-## Requerimientos
+## Visualizar diapositivas
 
-Es necesario tener instalado [Hovercraft!](https://github.com/regebro/hovercraft). Consultar instalación.
+Clonar el repositorio y abrir ./html/index.html
 
 ## Generar diapositivas HTML
 
@@ -14,6 +14,11 @@ Para generarlas nuevamente en base al .rst de Hovercraft!:
 
 1. Ejecutar `bash generar_html.sh`
 1. Revisar el directorio ./html . Este contendrá el resultado.
+
+### Requerimientos
+
+Es necesario tener instalado [Hovercraft!](https://github.com/regebro/hovercraft). Consultar instalación.
+
 
 ## Licencia
 
