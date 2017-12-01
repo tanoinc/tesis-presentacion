@@ -142,7 +142,7 @@ Sistemas Operativos móviles
     :height: 250em
 
 .. note::
-  - "Si pensamos en una app", debemos analizar implementacion a quien está enfocada (tesis)
+  - "Si pensamos en una app", debemos analizar implementacion a qué plataformas está enfocada (tesis)
   - Google Analytics: 01/2017 a 09/2017 en UNLP (guarani, cespi). Fechas pico de uso.
   - comentar sobre versiones: 4.4 o superiores (94%).
   - Enlazar con "algunas aplicaciones existentes"
@@ -153,8 +153,8 @@ Sistemas Operativos móviles
 :data-y: r100
 :data-x: r0
 
-Aplicaciones universitarias existentes
-======================================
+Aplicaciones móviles universitarias
+===================================
 
 * **UNLP y Argentina**: Informática UNLP, Jursoc UNLP, UNLP ART
 
@@ -168,7 +168,7 @@ Aplicaciones universitarias existentes
 
 .. note::
 
-  - Novedades, aulas y horarios (de materias), info institucional y academica.
+  - Info UNLPNovedades, aulas y horarios (de materias, código QR), info institucional y academica.
   - jursoc: Ubicacion de edificio GPS, nros sorteo.
   - ART: tels útiles, trámites.
   - Resaltar Kurogo: plataforma (Modo Labs) para crear apps móviles. Modular. Calendario, mensajeria, Biblioteca, emergencias, comedor, estacionamiento.
@@ -191,8 +191,38 @@ Principales características
 
 .. note::
   - novedades: : diversidad en la forma de comunicacion en la universidad. Multiples apps. "pull to refresh".
-  - planificacion estudiantil: Apps: Timetable (administrar tareas, examenes, sincronizar calend.)
+  - planificacion estudiantil: organizacion de fechas/horarios. Apps: Timetable (administrar tareas, examenes, sincronizar calend.)
   - Geoloc.: : < costos y > acceso red => Uso de geoloc. 
   - presencia: presente en los dispositivos moviles (smartphones y tablets), ámbito de las aplicaciones y tiendas virtuales, estableciendo un canal de difusion de contenidos.
+  - Concluir, para pasar al desarrollo.
+  
+----
+
+:data-y: r1000
+:data-x: 0
+:data-scale: 1
+:id: cap_2_3
+
+Marco teórico y desarrollo
+==========================
+
+.. note::
+
+  Considerar los mecanismos para:
+    - **Licencia**: Expresar la libertad de uso, copia y modificación del desarrollo.
+    - Brindar un mecanismo genérico para integrar información útil para el estudiante, entre distintos sistemas implementados en la unlp (**API para servicios externos**).
+    - Comunicar datos de interés entre el *backend* y los dispositivos móviles.    
+    - Proveer nuevas operaciones y que estas estén disponibles para su uso externo, a través de otros sistemas (**plugins**).
+    - Representar estos datos en una aplicación móvil, de manera sencilla y que el usuario encuentre cómodo al momento de su utilización (**Usabilidad**).
+
+----
+
+:data-x: r500
+:data-y: r0
+:data-scale: 0.1
+
+Licencia
+========
+
 
 
