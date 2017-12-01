@@ -60,7 +60,7 @@ Introducción
 ----
 
 :data-y: r0
-:data-x: r1200
+:data-x: r1400
 
 Objetivos
 =========
@@ -90,9 +90,9 @@ Objetivos específicos
 
 Analizar:
 
-* Aplicaciones existentes
+* Contexto y aplicaciones existentes
 
-* Herramientas para desarrollo de Apps móviles.
+* Herramientas para desarrollo de apps móviles.
 
 * Servicios existentes (UNLP)
 
@@ -118,3 +118,79 @@ Verificar Usabilidad.
   - guaraní: contribución a universidades
   - moodle: idem, open source.
   - tecnicas de usabilidad para verificar el impacto en el uso de la herramienta. Estas permiten obtener un feedback de los potenciales usuarios
+
+----
+
+:data-y: r1000
+:data-x: 0
+:id: cap_1
+
+Contexto
+========
+
+----
+
+:id: cap_1_oss
+:data-x: r500
+:data-y: r0
+:data-scale: 0.1
+
+Sistemas Operativos móviles
+===========================
+
+.. image:: imagenes/presentacion/so_uso.png
+    :height: 250em
+
+.. note::
+  - "Si pensamos en una app", debemos analizar implementacion a quien está enfocada (tesis)
+  - Google Analytics: 01/2017 a 09/2017 en UNLP (guarani, cespi). Fechas pico de uso.
+  - comentar sobre versiones: 4.4 o superiores (94%).
+  - Enlazar con "algunas aplicaciones existentes"
+
+----
+
+:id: cap_1_apps
+:data-y: r100
+:data-x: r0
+
+Aplicaciones universitarias existentes
+======================================
+
+* **UNLP y Argentina**: Informática UNLP, Jursoc UNLP, UNLP ART
+
+.. image:: imagenes/presentacion/unlp_info.png
+    :height: 200em
+
+.. image:: imagenes/presentacion/unlp_jursoc.png
+    :height: 200em
+
+* **Otros paises**: Kurogo, Harvard, Oxford
+
+.. note::
+
+  - Novedades, aulas y horarios (de materias), info institucional y academica.
+  - jursoc: Ubicacion de edificio GPS, nros sorteo.
+  - ART: tels útiles, trámites.
+  - Resaltar Kurogo: plataforma (Modo Labs) para crear apps móviles. Modular. Calendario, mensajeria, Biblioteca, emergencias, comedor, estacionamiento.
+
+----
+
+:data-y: r0
+:data-x: r250
+
+Principales características
+===========================
+
+* Novedades
+
+* Planificación estudiantil
+
+* Geolocalización
+
+* Presencia Universitaria
+
+.. note::
+
+  - presencia: presente en los dispositivos moviles (smartphones y tablets), ámbito de las aplicaciones y tiendas virtuales, estableciendo un canal de difusion de contenidos.
+
+
