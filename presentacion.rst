@@ -190,7 +190,9 @@ Principales características
 * Presencia Universitaria
 
 .. note::
-
+  - novedades: : diversidad en la forma de comunicacion en la universidad. Multiples apps. "pull to refresh".
+  - planificacion estudiantil: Apps: Timetable (administrar tareas, examenes, sincronizar calend.)
+  - Geoloc.: : < costos y > acceso red => Uso de geoloc. 
   - presencia: presente en los dispositivos moviles (smartphones y tablets), ámbito de las aplicaciones y tiendas virtuales, estableciendo un canal de difusion de contenidos.
 
 
