@@ -217,12 +217,119 @@ Marco teórico y desarrollo
 
 ----
 
-:data-x: r500
+:id: cap_2_3_software_libre
+:data-x: r800
 :data-y: r0
 :data-scale: 0.1
 
 Licencia
 ========
 
+Software Libre
+--------------
+
+*  Seguridad
+*  Calidad
+*  Personalización
+*  Libertad
+*  Interoperabilidad
+*  Auditabilidad
+*  Opciones de soporte
+*  Gratuidad
+*  Pruebas
+
+.. note::
+
+	*  La seguridad: Cuantas más personas vean el código, es más probable que detecten errores y los corrijan. Esto tiene un impacto directo en el marco de la seguridad.
+	*  La calidad: En relación con el inciso anterior, la cantidad de usuarios de un desarrollo, también influye, ya que permite que estos incorporen nuevas funcionalidades o las mejoren.
+	*  Personalización: Al permitir modificaciones, habilita a que estas se realicen para adaptarse a las necesidades del usuario u organismo.
+	*  La libertad: La utilización de software de "código abierto" libera el hecho de "estar atado" a una tecnología propietaria.
+	*  La interoperabilidad: Suele adhiere más a los estándares libres que el software privativo, lo que evita estar limitado al uso de formatos cerrados.
+	*  La auditabilidad: La visibilidad del código permite a los usuarios ver las acciones que este ejecuta.
+	*  Las opciones de soporte: El soporte es gratis a través de la asistencia de la comunidad de usuarios y desarrolladores. También existe el soporte pago, cuando es requerido asegurarse un mantenimiento.
+	*  La gratuidad (sin costo): por definición es gratis.
+	*  Las pruebas de un producto: Ayuda a evaluar un software antes de utilizarlo.
 
 
+----
+
+:id: cap_2_3_gnu_gpl
+
+GNU GPL v3
+==========
+
++---------------------------------+---------------------------------------------------------+
+| Backend (API)                   | https://github.com/tanoinc/mi-universidad-api.          |
++---------------------------------+---------------------------------------------------------+
+| Frontend (App móvil)            | https://github.com/tanoinc/mi-universidad-app.          |
++---------------------------------+---------------------------------------------------------+
+| Plugin Moodle                   | https://github.com/tanoinc/moodle-message_miuniversidad |
++---------------------------------+---------------------------------------------------------+
+| Plugin Guaraní                  |  Universidades.                                         |
++---------------------------------+---------------------------------------------------------+
+| Tesis (LaTeX)                   | https://github.com/tanoinc/tesis                        |
++---------------------------------+---------------------------------------------------------+
+| Esta presentación (Hovercraft!) | https://github.com/tanoinc/tesis-presentacion           |
++---------------------------------+---------------------------------------------------------+
+
+.. image:: imagenes/presentacion/octocat.png
+  :height: 150em
+
+.. note::
+
+  * **GNU GPL v3**: Richard Stallman -> proyecto GNU. Garantias al usuario final: utilizar, compartir, estudiar y cambiar el software. Su objetivo es declarar que los desarrollos que estén bajo esta licencia sean **libres** y estén protegidos por **copyleft**, **evitando** que futuras modificaciones por terceros **restrinjan las libertades que brinda esta licencia**.
+
+----
+
+:data-x: 0
+:data-y: r500
+
+Backend
+=======
+Servicios Web
+-------------
+* SOAP
+* REST
+
+SOAP vs REST... 
+~~~~~~~~~~~~~~~
+
+	**REST!**
+
+
+.. note::
+  REST: Roy Fielding
+  soap vs rest conclusion: mayor flexibilidad, mas liviana, tecnologıas -> uso generalizado, y se adapta correctamente a las necesidades de conexion de los dispositivos moviles y de otros servicios externos que consuman la informacion provista.
+
+  Ademas facilita la posibilidad de escalar horizontalmente y permite el uso de cache.
+
+----
+
+:data-x: r800
+:data-y: r0
+
+API RESTful
+===========
+
+*  Sin estado
+*  Orientada a recursos
+*  Acceso mediante URI
+*  Uso de métodos HTTP
+*  Representación de los recursos en *XML* o *JSON*
+*  Estado de respuesta utilizando códigos  *HTTP*
+*  Versionable?
+
+.. note::
+
+	*  **Sin estado**: No debe almacenar información de contexto del cliente. DATOS => se envían en cada pedido (incluidos datos de autenticación. Por qué?  escalabilidad y => performance. Sin estados en servidor => no necesidad de sincronizar distintos nodos.
+
+	*  **Orientada a recursos**: concepto del recurso. Cada recurso es componente distribuido que permite ser accedido directamente. COMO ACCEDER? siguientes puntos...
+
+	*  **Acceso mediante uri**: URI: principal interfaz de manipulación de los datos. auto-descriptiva = correcta (intuitiva). que de manera intuitiva se pueda predecir, o al menos saber dónde buscar, el acceso al recurso. Estructura jerárquica (de forma similar a la organización de los directorios).
+
+	*  **Uso de métodos http**: acciones => verbos HTTP => CRUD. Cada verbo tiene una semántica asociada que implica un comportamiento implícito de la API.
+	*  **Representación de los recursos en XML o json**: Manera en que info es codificada = formato. XML o JSON. Uno no es superior al otro... Necesidades. MiUniversidad en JSON: no requiere la existencia de datos complejos. simple compacto (menos \eng{overhead}), legible. Bueno para JS
+	*  **Estado de respuesta utilizando códigos http**: codigos estándar. Utiles para destinatario o intermediario genérico: cachés, proxies o librerías.
+
+	*  **Versionable**: No está dentro de las recomendaciones. contra a Purismo de REST. Realidad: software cambia, tamben APIs => aspecto relevante. 
+	  

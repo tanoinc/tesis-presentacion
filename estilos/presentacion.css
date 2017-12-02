@@ -13,7 +13,7 @@
     line-height: 1.1em;
 }
 
-#cap_1, #cap_1_oss, #cap_2_3 {
+#cap_1, #cap_1_oss, #cap_2_3, #cap_2_3_gnu_gpl {
     text-align: center;
 }
 
@@ -25,3 +25,20 @@
 #cap_1_apps {
     text-align: center;
 }
+
+#cap_2_3_software_libre li {
+    line-height: 1.1em;
+}
+
+#cap_2_3_gnu_gpl li {
+    line-height: 1.1em;
+}
+
+#cap_2_3_gnu_gpl a {
+    font-size: 0.7em;
+}
+
+#cap_2_3_gnu_gpl img {
+    float: right;
+}
+
