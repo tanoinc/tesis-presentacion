@@ -29,7 +29,7 @@ body {
     font-size: 50%;
 }
 
-ul {
+ul, ol {
     list-style-position: inside;
 }
 
@@ -39,6 +39,9 @@ li {
     margin-top: 0.2em;
     padding-left: 0.3em;
     line-height: 1.5em;
+}
+
+ul > li {
     list-style-type: circle;
 }
 
@@ -47,4 +50,13 @@ a {
 }
 td > p {
     margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }

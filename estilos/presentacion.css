@@ -13,11 +13,11 @@
     line-height: 1.1em;
 }
 
-#cap_1, #cap_1_oss, #cap_2_3, #cap_2_3_gnu_gpl {
+#cap_1, #cap_1_oss, #cap_2_3 h1, #cap_2_3_gnu_gpl, #cap_2_3_integracion h1 {
     text-align: center;
 }
 
-#cap_1_oss img {
+#cap_2_3_backend_diagrama img, #cap_1_oss img, #cap_2_3_plugins_guarani_imagen img, #cap_2_3_plugins_moodle_imagen img {
     background-color: #FFF;
     box-shadow: 0px 0px 10px 15px #fff;
 }
@@ -26,7 +26,7 @@
     text-align: center;
 }
 
-#cap_2_3_software_libre li {
+#cap_2_3_software_libre li, #cap_2_3_funcionalidad_api li {
     line-height: 1.1em;
 }
 
@@ -41,4 +41,29 @@
 #cap_2_3_gnu_gpl img {
     float: right;
 }
+
+#cap_2_3_integracion li, #cap_2_3_plugins_guarani li {
+    line-height: 1.1em;
+}
+
+#cap_2_3_integracion p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#cap_2_3_funcionalidad_puntos_novedades, #cap_2_3_funcionalidad_puntos_calendario, #cap_2_3_funcionalidad_puntos_mapa, #cap_2_3_funcionalidad_puntos_texto, #cap_2_3_funcionalidad_notificaciones, #cap_2_3_funcionalidad_secuencia_anadir_servicio, #cap_2_3_funcionalidad_contextos, #cap_2_3_plugins_guarani_imagen, #cap_2_3_plugins_moodle_imagen, #cap_2_3_usabilidad_focus, #cap_2_3_usabilidad_resultados, #cap_4_conclusion {
+    text-align: center;	
+}
+#cap_2_3_funcionalidad_puntos_novedades h1, #cap_2_3_funcionalidad_puntos_calendario h1 {
+    float: left;
+}
+
+#cap_2_3_plugins_guarani_imagen img, #cap_2_3_usabilidad_focus img {
+    width: 95%;
+}
+
+#cap_2_3_plugins_moodle_imagen img {
+    width: 75%;
+}
+
 

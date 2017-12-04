@@ -110,7 +110,7 @@ Verificar Usabilidad.
 
 .. note::
 
-  - apps existentes en Argentina y el mundo para determinar las caracterısticas mas relevantes de este desarrollo
+  - apps existentes en Argentina y el mundo para determinar las características mas relevantes de este desarrollo
   - herramientas existentes: desarrollo app, multiplataforma, aprovechando tecnologias
   - integracion servicios UNLP
   - Desarrollo App: comunicar/representar info
@@ -203,8 +203,22 @@ Principales características
 :data-scale: 1
 :id: cap_2_3
 
-Marco teórico y desarrollo
-==========================
+Mi Universidad
+==============
+
+* Licencia
+
+* Integración (backend)
+
+  * Con otros Servicios externos
+
+  * Con Aplicación móvil
+
+* Aplicación móvil (frontend)
+
+* Plugins
+
+* Usabilidad
 
 .. note::
 
@@ -259,13 +273,13 @@ GNU GPL v3
 ==========
 
 +---------------------------------+---------------------------------------------------------+
-| Backend (API)                   | https://github.com/tanoinc/mi-universidad-api.          |
+| Backend (API)                   | https://github.com/tanoinc/mi-universidad-api           |
 +---------------------------------+---------------------------------------------------------+
-| Frontend (App móvil)            | https://github.com/tanoinc/mi-universidad-app.          |
+| Frontend (App móvil)            | https://github.com/tanoinc/mi-universidad-app           |
 +---------------------------------+---------------------------------------------------------+
 | Plugin Moodle                   | https://github.com/tanoinc/moodle-message_miuniversidad |
 +---------------------------------+---------------------------------------------------------+
-| Plugin Guaraní                  |  Universidades.                                         |
+| Plugin Guaraní                  | Colab (SIU)                                             |
 +---------------------------------+---------------------------------------------------------+
 | Tesis (LaTeX)                   | https://github.com/tanoinc/tesis                        |
 +---------------------------------+---------------------------------------------------------+
@@ -281,55 +295,410 @@ GNU GPL v3
 
 ----
 
+:id: cap_2_3_integracion
 :data-x: 0
 :data-y: r500
 
-Backend
-=======
+Integración: Backend
+====================
+
 Servicios Web
 -------------
-* SOAP
-* REST
+  
+API REST (JSON) con Autenticación
 
-SOAP vs REST... 
-~~~~~~~~~~~~~~~
+* Servicios externos: API Key/API Secret
 
-	**REST!**
+* Aplicación móvil: OAuth2
+
+Lenguaje y framework
+--------------------
+
+PHP >= 5.6 y Lumen 5.4 (de Laravel)
+
+Base de datos
+-------------
+MySQL o Postgres (probadas). Soportadas: SQLite y SQL Server
+
+.. note::
+  - REST: JSON(simple, compacto <overhead). Sin estado. Orientada a recursos. Acceso mediante URI. Métodos HTTP (verbos CRUD). Versionable.
+  - OAuth2: verificar que aplicaciones tengan los permisos, en nombre del usuario (sin conocer sus credenciales). Resource Owner Password Credentials Grant. Tokens de acceso.
+  - API Key/API Secret: identificar al sistema. valida que los datos no fueron adulterados. Sobre https -> encriptado y replay attack.
+  - PHP: multiparadigma, multiplataforma, muy usado: 82% (ASP 14, java 2,5). Experiencia.
+  - Lumen: microframework de laravel orientado a APIS (sin sesiones y templates). Laravel muy usado. Lumen rápido: 50.000 solicitudes por minuto, y se logró tener respuestas de 6 milisegundos para configuraciones de PHP con HHVM y de 25 milisegundos utilizando PHP-FPM.
+
+----
+
+:id: cap_2_3_backend_diagrama
+:data-x: r800
+:data-y: r0
+
+.. image:: imagenes/presentacion/mi_universidad_api_diagrama.png
+
+----
+
+:id: cap_2_3_frontend
+
+Frontend
+========
+
+Aplicación móvil
+----------------
+
+Híbrida: Framework Ionic2 (Apache Cordova)
+
+HTML5, CSS3, Javascript (Angular con TypeScript)
+
+Interfaz de usuario
+-------------------
+
+Navegación Primaria: Pestañas (persistente) / Side Drawer (Transitorio)
+
+Navegación Secundaria: Tarjeta/Menú lista
 
 
 .. note::
-  REST: Roy Fielding
-  soap vs rest conclusion: mayor flexibilidad, mas liviana, tecnologıas -> uso generalizado, y se adapta correctamente a las necesidades de conexion de los dispositivos moviles y de otros servicios externos que consuman la informacion provista.
+  - Híbrdas: **Ventajas**: Multiplataforma. Menor costo. Menor curva de aprendizaje (tecnologías web, > recursos humanos). **Desventajas**: Menor diseño (look and feel). Menor performance.
+  - Cordova: Open Source (viene de PhoneGap, Nitobi). Contenedor con Capa Javascript acceder funcionalidad móviles.
+  - Ionic2: Framwork. Angular. Typescript. Look and Feel multiplataforma HTML5, CSS3, SASS, transiciones aceleradas por HW. Ventajas: Diseño=> usabilidad. Modificaciones en vivo. Mayor performance. Angular 2 con typescript. PWA. Amplia comunidad. Aclarar soporte version Adroid 4.4 > 94% de estudiantes. OTROS FRAMEWORKS: ReactNative y NativeScript.
 
-  Ademas facilita la posibilidad de escalar horizontalmente y permite el uso de cache.
+
+----
+
+:id: cap_2_3_funcionalidad
+:data-x: 0
+:data-y: r500
+
+Funcionalidad
+=============
+Algunas definiciones
+--------------------
+
+**Puntos de Integración**: *Funcionalidad clave, genérica y transversal a cualquier servicio, que tiene el potencial de ser integrada en la aplicación*
+
+**Servicios externos**: *Sistemas independientes que tienen la capacidad de integrarse a Mi Universidad.*
+
+**Contextos**: *Son "temáticas" definidas por los servicios externos*.
+
+.. note::
+  - **Puntos de Integración**: Cabe destacar que hay una relación directa entre estos puntos y la definición de la API, ya que estos serán expuestos a través de ella.
+  - **Servicios externos**: Su comunicacion se establece a traves de la API haciendo referencia a los puntos de integracion. Ademas, los usuarios tienen la posibilidad de añadir a sus cuentas personales, los servicios a los cuales esten interesados.
+
+----
+
+:id: cap_2_3_funcionalidad_puntos
+:data-x: r800
+:data-y: r0
+
+Puntos de Integración
+=====================
+
+A continuación:
+
+* Novedades
+* Calendario
+* Contenidos
+
+  * Mapas de Google
+
+  * Texto
+
+----
+
+:id: cap_2_3_funcionalidad_puntos_novedades
+
+.. image:: imagenes/presentacion/app_newsfeed.png
+
+.. note::
+  - Punto de integración: **Novedades**. Su modalidad de navegación secundaria es de lista y tarjeta (similar a aplicaciones como Facebook, Instagram y YouTube).
+
+----
+
+:id: cap_2_3_funcionalidad_puntos_calendario
+
+.. image:: imagenes/presentacion/app_calendario.png
+
+.. note::
+  - Punto de integración: **Calendario**.
+
+----
+
+:id: cap_2_3_funcionalidad_puntos_mapa
+
+.. image:: imagenes/presentacion/app_contenidos_suscripciones.png
+.. image:: imagenes/presentacion/app_mapa.png
+
+
+.. note::
+  - **Contenidos** dinámico. Los da de alta el servicio externo.
+  - Punto de integración: **Contenidos** Google Maps.
+  - Solicitud HTTP a una URL externa, obtener datos: **Marcadores** Representan puntos en el mapa asociados con un ícono y un texto. **Centro**, *Polígonos y lineas**
+  - Punto de integración: **Contenidos** Texto. Solicitud HTTP a una URL externa. Formato markdown.
+
+----
+
+Noficaciones
+============
+
+Tipos
+-----
+
+* "Globales" y "No Globales"
+
+  * Con destinatarios
+
+  * Sin destinatarios
+
+  * Con contexto asociado
+
+Ionic Services
+
+.. note::
+
+  - "Globales" y "No Globales"
+  - Con destinatarios: Notifican solamente a los usuarios del listado asociado.
+  - Sin destinatarios: Notifican a todos los usuarios que utilizan los servicios externos
+  - Con contexto asociado: Notifican a todos los usuarios interesados en él. 
+  - Utiliza servicio de Ionic: Abstrae diferencias entre implementaciones de los distintos SOs.
+
+----
+
+:id: cap_2_3_funcionalidad_notificaciones
+
+.. image:: imagenes/presentacion/app_notificaciones.png
+
+----
+
+Suscripciones
+=============
+A servicios externos...
+
+Tipos
+-----
+
+* Libre
+* Requiere autenticación
+
+----
+
+:id: cap_2_3_funcionalidad_secuencia_anadir_servicio
+
+.. image:: imagenes/presentacion/secuencia_anadir_servicio.png
+
+
+----
+
+:id: cap_2_3_funcionalidad_contextos
+
+Contextos
+=========
+
+.. image:: imagenes/presentacion/app_contextos.png
+
+----
+
+Otras funcionalidades
+=====================
+
+* Permisos
+* Pull to refresh
+* Login
+* i18n
+* Estilos personalizables
+* Introducción (configurable)
+
+.. note::
+	- Qué operaciones pueden ser utilizadas por cada servicio. Existe un permiso por cada entrada de la API (URL y metodo HTTP).
+
+	- Pull to refresh: estos se pueden refrescar con el gesto "pull to refresh" (deslizar para recargar). Este consiste en deslizar la pantalla hacia abajo para actualizar los contenidos. 
+
+	- Login: Manual o facebook
+
+	- Internacionalización: La aplicación soporta múltiples lenguajes que toma de la configuración del dispositivo. Para el alcance de esta tesis, solo hay definidos dos: Español e Inglés.
+
+	- Estilos personalizables: Mediante Sass (soportado por Ionic) se permiten personalizar los estilos y sus variables en archivos separados. Esto facilita la edición del diseño para otras Universidades. Por otro lado, si se necesitan realizar modificaciones, se puede aprovechar del mecanismo de versionado de GitHub para hacer un fork del proyecto y realizar los cambios necesarios. Ejemplo: rama master y rama UNLP
+
+	- Introducción configurable: La primera vez que se abre la aplicación aparecen una serie de diapositivas, que hacen de tutorial para mostrar las funcionalidades del sistema. Estas son configurables.
+
+
+----
+
+:id: cap_2_3_funcionalidad_api
+:data-x: 0
+:data-y: r500
+
+API
+===
+
+Utilizada por los servicios externos.
+
+* **POST** /api/v1/newsfeed, /api/v1/calendar_event, content/google_map, /api/v1/content/text
+* **DELETE** /api/v1/content/*{id}*
+* **GET** /api/v1/geolocation/user/*{id_usuario}*, POST /api/v1/geolocation/users
+
+Códigos de respuesta: 200, 401, 403, 404, 422, 500...
+
+Documentación
+-------------
+Swagger: https://app.swaggerhub.com/apis/tanoinc/mi-universidad/1.0.0
+
+----
+
+:id: cap_2_3_plugins_guarani
+:data-x: 0
+:data-y: r500
+
+Plugins
+=======
+
+Guaraní
+-------
+
+Framework SIU Chulupí (PHP): "Personalización"
+
+* 2.9.x: Informix
+
+* 3.x: Postgres
+
+Funcionalidad
+
+* Interconexión entre usuarios
+* Envío de mensajes
+* Fechas de parciales
+
+Colab (SIU)
+
+----
+
+:id: cap_2_3_plugins_guarani_imagen
+:data-x: r800
+:data-y: r0
+
+.. image:: imagenes/presentacion/plugin_guarani_envio_mensaje.png
+
+
+----
+
+:id: cap_2_3_plugins_moodle
+:data-x: 0
+:data-y: r500
+
+Plugins
+=======
+
+Moodle 3
+--------
+
+Tipo: *message output*
+
+Funcionalidad
+
+* Mensajería
+
+* Foro de novedades y consultas
+
+GNU GPL v3
+
+.. note::
+  - Se puede usar en versiones anteriores.
+  - Mensajería: Los mensajes personales que se reciban dentro de la plataforma, se envían como novedades personales con notificacion a Mi Universidad. De esta manera un alumno podra saber con una notificación cuando le envían un mensaje privado. Esta característica se puede deshabilitar y es configurable por el usuario desde Moodle.
+  - Foro de novedades y consultas: Los anuncios que se realicen en el foro de novedades, seran enviados a traves de Mi Universidad a los alumnos del curso y ademas quedaran asociados a su contexto. De esta manera los alumnos que no pertenezcan al curso pero quieran estar al tanto de las novedades, puedan hacerlo, suscribiendose.
+
+----
+
+:id: cap_2_3_plugins_moodle_imagen
+:data-x: r800
+:data-y: r0
+
+.. image:: imagenes/presentacion/plugin_moodle_config.png
+.. image:: imagenes/presentacion/plugin_moodle_config_notificaciones.png
+
+----
+
+:id: cap_2_3_usabilidad
+:data-x: 0
+:data-y: r500
+
+Usabilidad
+==========
+
+Recomendaciones de Nielsen Norman Group:
+**Focus group**
+
+Etapa preliminar
+----------------
+
+* Preparación del producto
+
+* Selección de participantes
+
+* Selección de coordinación 
+
+
+.. note::
+
+  - Nielsen Norman Group: estudio a obtener datos de una investigación cualitativa con usuarios.
+  - **Focus group**: son una forma de entrevista grupal que se centra en la comunicacion entre los participantes de la investigacion para generar nueva informacion (datos, ideas, correcciones, etcetera).
+  - La charla grupal favorecio a la prueba. La interaccion entre los participantes permitio explorar el conocimiento y experiencia de las personas. De esta manera se pudo explorar no solo lo que pensaban, sino tambien como lo hacían y por qué.
 
 ----
 
 :data-x: r800
 :data-y: r0
 
-API RESTful
-===========
+Usabilidad
+==========
 
-*  Sin estado
-*  Orientada a recursos
-*  Acceso mediante URI
-*  Uso de métodos HTTP
-*  Representación de los recursos en *XML* o *JSON*
-*  Estado de respuesta utilizando códigos  *HTTP*
-*  Versionable?
+Etapa de diseño
+---------------
+
+Lista de tareas
+
+Desarrollo
+----------
+
+Reuniones: 18/08 y 13/09 de 2017
+
+5 Usuarios
+
+----
+
+:id: cap_2_3_usabilidad_focus
+
+.. image:: imagenes/presentacion/focus_group.png
+
+----
+
+:id: cap_2_3_usabilidad_resultados
+
+Usabilidad
+==========
+
+Resultados
+----------
+
+.. image:: imagenes/presentacion/crying.png
+
+----
+
+:id: cap_4_conclusion
+:data-y: r1000
+:data-x: 0
+:data-scale: 1
+
+
+Conclusión
+==========
+
+Trabajos Futuros
+----------------
+
 
 .. note::
 
-	*  **Sin estado**: No debe almacenar información de contexto del cliente. DATOS => se envían en cada pedido (incluidos datos de autenticación. Por qué?  escalabilidad y => performance. Sin estados en servidor => no necesidad de sincronizar distintos nodos.
-
-	*  **Orientada a recursos**: concepto del recurso. Cada recurso es componente distribuido que permite ser accedido directamente. COMO ACCEDER? siguientes puntos...
-
-	*  **Acceso mediante uri**: URI: principal interfaz de manipulación de los datos. auto-descriptiva = correcta (intuitiva). que de manera intuitiva se pueda predecir, o al menos saber dónde buscar, el acceso al recurso. Estructura jerárquica (de forma similar a la organización de los directorios).
-
-	*  **Uso de métodos http**: acciones => verbos HTTP => CRUD. Cada verbo tiene una semántica asociada que implica un comportamiento implícito de la API.
-	*  **Representación de los recursos en XML o json**: Manera en que info es codificada = formato. XML o JSON. Uno no es superior al otro... Necesidades. MiUniversidad en JSON: no requiere la existencia de datos complejos. simple compacto (menos \eng{overhead}), legible. Bueno para JS
-	*  **Estado de respuesta utilizando códigos http**: codigos estándar. Utiles para destinatario o intermediario genérico: cachés, proxies o librerías.
-
-	*  **Versionable**: No está dentro de las recomendaciones. contra a Purismo de REST. Realidad: software cambia, tamben APIs => aspecto relevante. 
-	  
+  - se puede desarrollar una solucion para facilitar el acceso a la informacion por parte de los alumnos, que sea:
+  - abierta (utilizando software Open Source y estandares abiertos),
+  - distribuida,
+  - extensible a otras Universidades,
+  - con una interfaz publica que pueda ser consultada y utilizada por otrosservicios,
+  - que permita integrar aspectos claves de multiples sistemas.
