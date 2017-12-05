@@ -27,12 +27,32 @@ Asesor Profesional: Alejandra Osorio.
 .. note::
   Realizar presentación personal:
     - Nombre
-    - Presentar directores, y AP y comentar cual es mi relacion laboral
-    - Cespi -> Acceso a Sistemas universitarios.
+    - comentar cual es mi relacion laboral
+    - Cespi -> Acceso a Sistemas universitarios (guarani, sipu, sipecu, moodle, kimkelen, meran).
+
+----
+
+:id: agenda
+
+Agenda de exposición
+====================
+
+1. Introducción y objetivos
+2. Contexto
+3. Mi Universidad
+
+    a. Backend
+    b. Frontend
+    c. Funcionalidad
+    d. Plugins
+    e. Usabilidad
+
+4. Conclusión
 
 ----
 
 :id: introduccion
+:data-x: 0
 :data-y: r1000
 
 Introducción
@@ -56,6 +76,14 @@ Introducción
   - Universidades utilizan sistemas abiertos -> Solucion disponible a otras universidades.
 
   **Comunicacion**: enriquezca entre los alumnos y la entidad -> mejorar su experiencia de usuario
+
+----
+
+:id: intro_integracion
+:data-y: r0
+:data-x: r1400
+
+.. image:: imagenes/presentacion/interaccion.png
 
 ----
 
@@ -85,9 +113,6 @@ Integración de servicios para mejorar:
 
 :id: objetivos_especificos
 
-Objetivos específicos
-=====================
-
 Analizar:
 
 * Contexto y aplicaciones existentes
@@ -106,7 +131,9 @@ Desarrollar:
 
 * Plugin Moodle
 
-Verificar Usabilidad.
+Verificar 
+
+* Usabilidad.
 
 .. note::
 
@@ -141,6 +168,8 @@ Sistemas Operativos móviles
 .. image:: imagenes/presentacion/so_uso.png
     :height: 250em
 
+Datos obtenidos de Google Analytics en los Guaraní de todas las Facultades (Enero a Septiembre, 2017)
+
 .. note::
   - "Si pensamos en una app", debemos analizar implementacion a qué plataformas está enfocada (tesis)
   - Google Analytics: 01/2017 a 09/2017 en UNLP (guarani, cespi). Fechas pico de uso.
@@ -156,6 +185,8 @@ Sistemas Operativos móviles
 Aplicaciones móviles universitarias
 ===================================
 
+* **El mundo**: Kurogo, Harvard, Oxford
+
 * **UNLP y Argentina**: Informática UNLP, Jursoc UNLP, UNLP ART
 
 .. image:: imagenes/presentacion/unlp_info.png
@@ -164,14 +195,13 @@ Aplicaciones móviles universitarias
 .. image:: imagenes/presentacion/unlp_jursoc.png
     :height: 200em
 
-* **Otros paises**: Kurogo, Harvard, Oxford
-
 .. note::
 
+  - Resaltar Kurogo: plataforma (Modo Labs) para crear apps móviles. Modular. Calendario, mensajeria, Biblioteca, emergencias, comedor, estacionamiento.
   - Info UNLPNovedades, aulas y horarios (de materias, código QR), info institucional y academica.
   - jursoc: Ubicacion de edificio GPS, nros sorteo.
   - ART: tels útiles, trámites.
-  - Resaltar Kurogo: plataforma (Modo Labs) para crear apps móviles. Modular. Calendario, mensajeria, Biblioteca, emergencias, comedor, estacionamiento.
+
 
 ----
 
@@ -196,11 +226,20 @@ Principales características
   - presencia: presente en los dispositivos moviles (smartphones y tablets), ámbito de las aplicaciones y tiendas virtuales, estableciendo un canal de difusion de contenidos.
   - Concluir, para pasar al desarrollo.
   
+
 ----
 
 :data-y: r1000
 :data-x: 0
 :data-scale: 1
+:id: cap_2_3_mi_universidad_pantalla
+
+.. image:: imagenes/presentacion/app_login.png
+
+----
+
+:data-y: r0
+:data-x: r375
 :id: cap_2_3
 
 Mi Universidad
@@ -231,43 +270,10 @@ Mi Universidad
 
 ----
 
-:id: cap_2_3_software_libre
+:id: cap_2_3_gnu_gpl
 :data-x: r800
 :data-y: r0
 :data-scale: 0.1
-
-Licencia
-========
-
-Software Libre
---------------
-
-*  Seguridad
-*  Calidad
-*  Personalización
-*  Libertad
-*  Interoperabilidad
-*  Auditabilidad
-*  Opciones de soporte
-*  Gratuidad
-*  Pruebas
-
-.. note::
-
-	*  La seguridad: Cuantas más personas vean el código, es más probable que detecten errores y los corrijan. Esto tiene un impacto directo en el marco de la seguridad.
-	*  La calidad: En relación con el inciso anterior, la cantidad de usuarios de un desarrollo, también influye, ya que permite que estos incorporen nuevas funcionalidades o las mejoren.
-	*  Personalización: Al permitir modificaciones, habilita a que estas se realicen para adaptarse a las necesidades del usuario u organismo.
-	*  La libertad: La utilización de software de "código abierto" libera el hecho de "estar atado" a una tecnología propietaria.
-	*  La interoperabilidad: Suele adhiere más a los estándares libres que el software privativo, lo que evita estar limitado al uso de formatos cerrados.
-	*  La auditabilidad: La visibilidad del código permite a los usuarios ver las acciones que este ejecuta.
-	*  Las opciones de soporte: El soporte es gratis a través de la asistencia de la comunidad de usuarios y desarrolladores. También existe el soporte pago, cuando es requerido asegurarse un mantenimiento.
-	*  La gratuidad (sin costo): por definición es gratis.
-	*  Las pruebas de un producto: Ayuda a evaluar un software antes de utilizarlo.
-
-
-----
-
-:id: cap_2_3_gnu_gpl
 
 GNU GPL v3
 ==========
@@ -292,6 +298,17 @@ GNU GPL v3
 .. note::
 
   * **GNU GPL v3**: Richard Stallman -> proyecto GNU. Garantias al usuario final: utilizar, compartir, estudiar y cambiar el software. Su objetivo es declarar que los desarrollos que estén bajo esta licencia sean **libres** y estén protegidos por **copyleft**, **evitando** que futuras modificaciones por terceros **restrinjan las libertades que brinda esta licencia**.
+  * SIU Comunidad y Javier y LINTI promeve el uso de y desarrollo de software libre
+  * -
+	*  La seguridad: Cuantas más personas vean el código, es más probable que detecten errores y los corrijan. Esto tiene un impacto directo en el marco de la seguridad.
+	*  La calidad: En relación con el inciso anterior, la cantidad de usuarios de un desarrollo, también influye, ya que permite que estos incorporen nuevas funcionalidades o las mejoren.
+	*  Personalización: Al permitir modificaciones, habilita a que estas se realicen para adaptarse a las necesidades del usuario u organismo.
+	*  La libertad: La utilización de software de "código abierto" libera el hecho de "estar atado" a una tecnología propietaria.
+	*  La interoperabilidad: Suele adhiere más a los estándares libres que el software privativo, lo que evita estar limitado al uso de formatos cerrados.
+	*  La auditabilidad: La visibilidad del código permite a los usuarios ver las acciones que este ejecuta.
+	*  Las opciones de soporte: El soporte es gratis a través de la asistencia de la comunidad de usuarios y desarrolladores. También existe el soporte pago, cuando es requerido asegurarse un mantenimiento.
+	*  La gratuidad (sin costo): por definición es gratis.
+	*  Las pruebas de un producto: Ayuda a evaluar un software antes de utilizarlo.
 
 ----
 
@@ -361,7 +378,16 @@ Navegación Secundaria: Tarjeta/Menú lista
   - Híbrdas: **Ventajas**: Multiplataforma. Menor costo. Menor curva de aprendizaje (tecnologías web, > recursos humanos). **Desventajas**: Menor diseño (look and feel). Menor performance.
   - Cordova: Open Source (viene de PhoneGap, Nitobi). Contenedor con Capa Javascript acceder funcionalidad móviles.
   - Ionic2: Framwork. Angular. Typescript. Look and Feel multiplataforma HTML5, CSS3, SASS, transiciones aceleradas por HW. Ventajas: Diseño=> usabilidad. Modificaciones en vivo. Mayor performance. Angular 2 con typescript. PWA. Amplia comunidad. Aclarar soporte version Adroid 4.4 > 94% de estudiantes. OTROS FRAMEWORKS: ReactNative y NativeScript.
+  - Interfaz de usuario: se evaluaron otros patrones de diseño de interfaces.
 
+
+----
+
+:id: cap_2_3_frontend_imagen
+:data-x: r200
+
+
+.. image:: imagenes/presentacion/app_newsfeed.png
 
 ----
 
@@ -407,6 +433,8 @@ A continuación:
 
 :id: cap_2_3_funcionalidad_puntos_novedades
 
+Novedades
+
 .. image:: imagenes/presentacion/app_newsfeed.png
 
 .. note::
@@ -416,12 +444,16 @@ A continuación:
 
 :id: cap_2_3_funcionalidad_puntos_calendario
 
+Calendario
+
 .. image:: imagenes/presentacion/app_calendario.png
 
 .. note::
   - Punto de integración: **Calendario**.
 
 ----
+
+Contenidos: Mapas
 
 :id: cap_2_3_funcionalidad_puntos_mapa
 
@@ -597,7 +629,7 @@ Funcionalidad
 
 * Foro de novedades y consultas
 
-GNU GPL v3
+GNU GPL v3: GitHub
 
 .. note::
   - Se puede usar en versiones anteriores.
@@ -639,7 +671,7 @@ Etapa preliminar
 
   - Nielsen Norman Group: estudio a obtener datos de una investigación cualitativa con usuarios.
   - **Focus group**: son una forma de entrevista grupal que se centra en la comunicacion entre los participantes de la investigacion para generar nueva informacion (datos, ideas, correcciones, etcetera).
-  - La charla grupal favorecio a la prueba. La interaccion entre los participantes permitio explorar el conocimiento y experiencia de las personas. De esta manera se pudo explorar no solo lo que pensaban, sino tambien como lo hacían y por qué.
+  - La charla grupal favorecio a la prueba. La **interaccion entre los participantes** permitio explorar el **conocimiento y experiencia de las personas**. De esta manera se pudo explorar no solo lo que pensaban, sino tambien **como lo hacían y por qué**.
 
 ----
 
@@ -659,13 +691,16 @@ Desarrollo
 
 Reuniones: 18/08 y 13/09 de 2017
 
-5 Usuarios
 
 ----
 
 :id: cap_2_3_usabilidad_focus
 
 .. image:: imagenes/presentacion/focus_group.png
+
+.. note::
+
+  - Accesibilidad: Maxi pertenece a la dirección de accesibilidad de la facultad.
 
 ----
 
@@ -678,6 +713,13 @@ Resultados
 ----------
 
 .. image:: imagenes/presentacion/crying.png
+
+.. note::
+
+  - Resaltar el proceso inicial de suscripciones
+  - Establecer ayudas para aclarar qué realiza cada botón
+  - En Android: modificar el gesto para eliminar un servicio.
+  - Agregar un mensaje de bienvenida al abrir la aplicación mostrando un resumen de sus funcionalidades. Considerar la posibilidad de volver a reproducir y cancelar
 
 ----
 
@@ -693,6 +735,8 @@ Conclusión
 Trabajos Futuros
 ----------------
 
+.. image:: imagenes/presentacion/interaccion_integrado.png
+  :width: 375em
 
 .. note::
 
@@ -702,3 +746,10 @@ Trabajos Futuros
   - extensible a otras Universidades,
   - con una interfaz publica que pueda ser consultada y utilizada por otrosservicios,
   - que permita integrar aspectos claves de multiples sistemas.
+  - **TRABAJOS FUTUROS**: alumnos internacionales. Mejorar contenidos existentes e incorporar nuevos. MAyor integracion rede sociales. Motor de busqueda Elastic, Sphinx, Lucene. API Gateway TYK.
+
+----
+
+FIN
+===
+

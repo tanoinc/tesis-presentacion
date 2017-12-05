@@ -13,7 +13,7 @@
     line-height: 1.1em;
 }
 
-#cap_1, #cap_1_oss, #cap_2_3 h1, #cap_2_3_gnu_gpl, #cap_2_3_integracion h1 {
+#cap_1, #cap_1_oss, #cap_2_3 h1, #cap_2_3_gnu_gpl, #cap_2_3_integracion h1, #cap_2_3_frontend_imagen {
     text-align: center;
 }
 
@@ -22,7 +22,7 @@
     box-shadow: 0px 0px 10px 15px #fff;
 }
 
-#cap_1_apps {
+#cap_1_apps, #intro_integracion {
     text-align: center;
 }
 
@@ -42,7 +42,7 @@
     float: right;
 }
 
-#cap_2_3_integracion li, #cap_2_3_plugins_guarani li {
+#cap_2_3_integracion li, #cap_2_3_plugins_guarani li, #agenda li {
     line-height: 1.1em;
 }
 
